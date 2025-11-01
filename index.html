@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Rukesh Kantheti - ML Engineer Portfolio</title>
+    <style>
+        :root {
+            /* Primitive Color Tokens */
+            --color-white: rgba(255, 255, 255, 1);
+            --color-black: rgba(0, 0, 0, 1);
+            --color-cream-50: rgba(252, 252, 249, 1);
+            --color-cream-100: rgba(255, 255, 253, 1);
+            --color-gray-200: rgba(245, 245, 245, 1);
+            --color-gray-300: rgba(167, 169, 169, 1);
+            --color-gray-400: rgba(119, 124, 124, 1);
+            --color-slate-500: rgba(98, 108, 113, 1);
+            --color-brown-600: rgba(94, 82, 64, 1);
+            --color-charcoal-700: rgba(31, 33, 33, 1);
+            --color-charcoal-800: rgba(38, 40, 40, 1);
+            --color-slate-900: rgba(19, 52, 59, 1);
+            --color-teal-300: rgba(50, 184, 198, 1);
+            --color-teal-400: rgba(45, 166, 178, 1);
+            --color-teal-500: rgba(33, 128, 141, 1);
+            --color-teal-600: rgba(29, 116, 128, 1);
+            --color-teal-700: rgba(26, 104, 115, 1);
+            --color-teal-800: rgba(41, 150, 161, 1);
+            --color-red-400: rgba(255, 84, 89, 1);
+            --color-red-500: rgba(192, 21, 47, 1);
+            --color-orange-400: rgba(230, 129, 97, 1);
+            --color-orange-500: rgba(168, 75, 47, 1);
+
+            /* RGB versions for opacity control */
+            --color-brown-600-rgb: 94, 82, 64;
+            --color-teal-500-rgb: 33, 128, 141;
+            --color-slate-900-rgb: 19, 52, 59;
+            --color-slate-500-rgb: 98, 108, 113;
+            --color-red-500-rgb: 192, 21, 47;
+            --color-red-400-rgb: 255, 84, 89;
+            --color-orange-500-rgb: 168, 75, 47;
+            --color-orange-400-rgb: 230, 129, 97;
+
+            /* Semantic Color Tokens */
+            --color-background: var(--color-cream-50);
+            --color-surface: var(--color-cream-100);
+            --color-text: var(--color-slate-900);
+            --color-text-secondary: var(--color-slate-500);
+            --color-primary: var(--color-teal-500);
+            --color-primary-hover: var(--color-teal-600);
+            --color-primary-active: var(--color-teal-700);
+            --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+            --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+            --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
+            --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+            --color-btn-primary-text: var(--color-cream-50);
+            --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+            --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+            --color-error: var(--color-red-500);
+            --color-success: var(--color-teal-500);
+            --color-warning: var(--color-orange-500);
+            --color-info: var(--color-slate-500);
+            --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
+            --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
+
+            /* Typography */
+            --font-family-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            --font-size-xs: 11px;
+            --font-size-sm: 12px;
+            --font-size-base: 14px;
+            --font-size-md: 14px;
+            --font-size-lg: 16px;
+            --font-size-xl: 18px;
+            --font-size-2xl: 20px;
+            --font-size-3xl: 24px;
+            --font-size-4xl: 30px;
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 550;
+            --font-weight-bold: 600;
+            --line-height-tight: 1.2;
+            --line-height-normal: 1.5;
+            --letter-spacing-tight: -0.01em;
+
+            /* Spacing */
+            --space-0: 0;
+            --space-1: 1px;
+            --space-2: 2px;
+            --space-4: 4px;
+            --space-6: 6px;
+            --space-8: 8px;
+            --space-10: 10px;
+            --space-12: 12px;
+            --space-16: 16px;
+            --space-20: 20px;
+            --space-24: 24px;
+            --space-32: 32px;
+
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius-base: 8px;
+            --radius-md: 10px;
+            --radius-lg: 12px;
+            --radius-full: 9999px;
+
+            /* Shadows */
+            --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+
+            /* Animation */
+            --duration-fast: 150ms;
+            --duration-normal: 250ms;
+            --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Dark mode colors */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-background: var(--color-charcoal-700);
+                --color-surface: var(--color-charcoal-800);
+                --color-text: var(--color-gray-200);
+                --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
+                --color-primary: var(--color-teal-300);
+                --color-primary-hover: var(--color-teal-400);
+                --color-primary-active: var(--color-teal-800);
+                --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
+                --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
+                --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
+                --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+                --color-card-border: rgba(var(--color-gray-400-rgb), 0.2);
+                --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
+                --color-gray-400-rgb: 119, 124, 124;
+                --color-teal-300-rgb: 50, 184, 198;
+                --color-gray-300-rgb: 167, 169, 169;
+                --color-gray-200-rgb: 245, 245, 245;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: var(--font-size-base);
+            font-family: var(--font-family-base);
+            line-height: var(--line-height-normal);
+            color: var(--color-text);
+            background-color: var(--color-background);
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-teal-600) 100%);
+            color: var(--color-white);
+            padding: var(--space-32) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-20);
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: var(--radius-full);
+            margin: 0 auto var(--space-24);
+            border: 4px solid rgba(255, 255, 255, 0.9);
+            box-shadow: var(--shadow-lg);
+            object-fit: cover;
+            display: block;
+        }
+
+        .header h1 {
+            font-size: var(--font-size-4xl);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-8);
+            letter-spacing: var(--letter-spacing-tight);
+        }
+
+        .header .subtitle {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-16);
+            opacity: 0.9;
+            font-weight: var(--font-weight-medium);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-24);
+            flex-wrap: wrap;
+            margin-top: var(--space-20);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-8);
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: color var(--duration-fast) var(--ease-standard);
+        }
+
+        .contact-item:hover {
+            color: var(--color-white);
+        }
+
+        /* Navigation */
+        .nav {
+            background: var(--color-surface);
+            border-bottom: 1px solid var(--color-card-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-20);
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: var(--space-32);
+            padding: var(--space-16) 0;
+        }
+
+        .nav-link {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: var(--font-weight-medium);
+            padding: var(--space-8) var(--space-16);
+            border-radius: var(--radius-base);
+            transition: all var(--duration-fast) var(--ease-standard);
+        }
+
+        .nav-link:hover {
+            background: var(--color-secondary);
+            color: var(--color-primary);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-20);
+        }
+
+        .section {
+            padding: var(--space-32) 0;
+        }
+
+        .section-title {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            text-align: center;
+            margin-bottom: var(--space-32);
+            color: var(--color-text);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--color-primary);
+            border-radius: var(--radius-full);
+        }
+
+        /* Cards */
+        .card {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-card-border);
+            box-shadow: var(--shadow-sm);
+            padding: var(--space-24);
+            margin-bottom: var(--space-24);
+            transition: all var(--duration-normal) var(--ease-standard);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .card h3 {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-text);
+            margin-bottom: var(--space-16);
+        }
+
+        .card h4 {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-primary);
+            margin-bottom: var(--space-12);
+        }
+
+        .card p, .card li {
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--space-12);
+        }
+
+        .card ul {
+            padding-left: var(--space-20);
+        }
+
+        /* Artifact Template Structure */
+        .artifact {
+            border-left: 4px solid var(--color-primary);
+            padding-left: var(--space-20);
+        }
+
+        .artifact-section {
+            margin-bottom: var(--space-20);
+        }
+
+        .artifact-section h5 {
+            font-size: var(--font-size-md);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            margin-bottom: var(--space-8);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .artifact-section p {
+            margin-bottom: var(--space-12);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-24);
+        }
+
+        .skill-category h4 {
+            color: var(--color-primary);
+            margin-bottom: var(--space-12);
+            font-size: var(--font-size-lg);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-8);
+        }
+
+        .skill-tag {
+            background: var(--color-secondary);
+            color: var(--color-text);
+            padding: var(--space-6) var(--space-12);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-medium);
+        }
+
+        /* Links */
+        .external-link {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: var(--font-weight-medium);
+            transition: color var(--duration-fast) var(--ease-standard);
+        }
+
+        .external-link:hover {
+            color: var(--color-primary-hover);
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: var(--font-size-3xl);
+            }
+
+            .header .subtitle {
+                font-size: var(--font-size-lg);
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: var(--space-12);
+            }
+
+            .nav-list {
+                flex-direction: column;
+                gap: var(--space-8);
+                text-align: center;
+            }
+
+            .section {
+                padding: var(--space-24) 0;
+            }
+
+            .section-title {
+                font-size: var(--font-size-2xl);
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        /* Portfolio Note Styling */
+        .portfolio-note {
+            background: var(--color-secondary);
+            border-left: 4px solid var(--color-primary);
+            padding: var(--space-20);
+            margin-bottom: var(--space-32);
+            border-radius: var(--radius-base);
+        }
+
+        .portfolio-note h4 {
+            color: var(--color-primary);
+            margin-bottom: var(--space-12);
+        }
+
+        .portfolio-note p {
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-8);
+        }
+
+        /* Print Styles */
+        @media print {
+            .nav { display: none; }
+            .header { background: #333 !important; }
+            .card { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-content">
+            <img src="https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/images/12609892/f28e2c3f-3c06-4fbc-a497-a4d4cda665ed/50382429_00301_0265_XLarge.jpg" alt="Sai Rukesh Kantheti" class="profile-image">
+            <h1>Sai Rukesh Kantheti</h1>
+            <p class="subtitle">Software Engineer, ML | AI Innovation Specialist</p>
+            <div class="contact-info">
+                <a href="mailto:s.rukesh.k.3663@gmail.com" class="contact-item">
+                    <span>📧</span> s.rukesh.k.3663@gmail.com
+                </a>
+                <a href="tel:9087281036" class="contact-item">
+                    <span>📱</span> (908) 728-1036
+                </a>
+                <a href="https://linkedin.com/in/rukesh-k" class="contact-item" target="_blank" rel="noopener noreferrer">
+                    <span>🔗</span> LinkedIn
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <ul class="nav-list">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#value-proposition" class="nav-link">Value Proposition</a></li>
+                <li><a href="#artifacts" class="nav-link">Artifacts</a></li>
+                <li><a href="#skills" class="nav-link">Technical Skills</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2 class="section-title">Professional Bio</h2>
+            <div class="card">
+                <p>I am a dedicated <strong>Software Engineer specializing in Machine Learning</strong> with a passion for developing innovative AI solutions that drive tangible business impact. Currently serving as an ML Engineer at Southern Company, I have successfully designed and deployed LLM-powered systems that have reduced operational costs by over $100,000 while improving customer satisfaction metrics.</p>
+                
+                <p>My journey in AI and machine learning began during my advanced coursework in <strong>Machine Learning, Deep Learning, Natural Language Processing, and Speech Processing</strong>. This academic foundation, combined with hands-on industry experience, has equipped me with a comprehensive understanding of both theoretical concepts and practical implementation challenges.</p>
+                
+                <p>Throughout my career, I have demonstrated expertise in building end-to-end ML pipelines, from data augmentation and model training to deployment and monitoring. My technical proficiency spans across <strong>Python, Java, PyTorch, TensorFlow, AWS, and GCP</strong>, enabling me to architect scalable solutions that meet enterprise-grade requirements.</p>
+                
+                <p>What drives me is the opportunity to bridge the gap between cutting-edge AI research and real-world applications. I am particularly passionate about <strong>Large Language Models, Multi-Agent Systems, and Self-Reflection design patterns</strong>, areas where I have contributed to significant operational improvements and cost savings in my current role.</p>
+                
+                <p>As I continue to evolve in this rapidly advancing field, my goal is to lead AI initiatives that not only showcase technical excellence but also deliver measurable value to organizations and their stakeholders.</p>
+            </div>
+        </section>
+
+        <!-- Value Proposition -->
+        <section id="value-proposition" class="section">
+            <h2 class="section-title">Personal Value Proposition</h2>
+            <div class="card">
+                <h3>Transforming Business Challenges into AI-Driven Solutions</h3>
+                <p>I bring a unique combination of <strong>deep technical expertise in machine learning</strong> and <strong>strategic business acumen</strong> to deliver AI solutions that drive measurable impact. My approach to AI development is rooted in understanding real-world problems first, then architecting sophisticated yet practical solutions that scale.</p>
+                
+                <h4>What Sets Me Apart:</h4>
+                <ul>
+                    <li><strong>Proven ROI Delivery:</strong> Demonstrated ability to reduce operational costs by $100K+ through intelligent automation and chatbot development</li>
+                    <li><strong>End-to-End ML Expertise:</strong> From data pipeline creation to model deployment and monitoring, I handle the complete machine learning lifecycle</li>
+                    <li><strong>Innovation Through Research:</strong> I stay at the forefront of AI advancement, implementing cutting-edge techniques like Multi-Agent LLM Systems and Self-Reflection patterns</li>
+                    <li><strong>Cross-Functional Leadership:</strong> Experience collaborating with diverse teams to translate complex AI concepts into actionable business strategies</li>
+                    <li><strong>Scalable Architecture Design:</strong> Expertise in building robust, enterprise-grade AI systems using cloud platforms (AWS, GCP) and modern ML frameworks</li>
+                </ul>
+                
+                <p><strong>My Mission:</strong> To leverage artificial intelligence as a catalyst for organizational transformation, creating solutions that not only solve today's challenges but anticipate tomorrow's opportunities. I believe in responsible AI development that enhances human capability while driving sustainable business growth.</p>
+            </div>
+        </section>
+
+        <!-- Artifacts Section -->
+        <section id="artifacts" class="section">
+            <h2 class="section-title">Portfolio Artifacts</h2>
+            
+            <!-- Portfolio Reflection Note -->
+            <div class="portfolio-note">
+                <h4>📚 Workshop 1 Coursework Integration</h4>
+                <p>This portfolio includes carefully selected artifacts from Workshop 1 that demonstrate professional growth and learning capabilities. These artifacts showcase not just technical skills, but also the critical thinking and self-assessment abilities essential for continuous professional development.</p>
+                <p><strong>Artifacts 6 & 7</strong> represent Workshop 1 deliverables, chosen to highlight different aspects of professional competency: practical AI implementation (RoamIQ) and reflective professional assessment skills.</p>
+            </div>
+
+            <!-- Artifact 1 -->
+            <div class="card artifact">
+                <h3>Artifact 1: LLM-Powered ServiceNow Chatbot</h3>
+                
+                <div class="artifact-section">
+                    <h5>Introduction</h5>
+                    <p>An enterprise-grade intelligent chatbot system designed to revolutionize customer service operations by leveraging Large Language Model technology integrated with ServiceNow's ticketing platform.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Description</h5>
+                    <p>Developed a comprehensive LLM-powered chatbot from ground zero that serves as the primary interface between customers and Southern Company's service infrastructure. The system intelligently processes customer queries, provides instant responses for common issues, and seamlessly escalates complex problems to human agents when necessary. The solution integrates sophisticated natural language understanding with ServiceNow's ticketing system to provide contextual, accurate responses while maintaining conversation history and user preferences.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Objective</h5>
+                    <p>To reduce monthly ticket volume by implementing an intelligent first-line support system that can handle routine customer inquiries autonomously, while improving response times and customer satisfaction scores. The primary goal was achieving significant cost reduction in ticket resolution expenses while maintaining service quality standards.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Process</h5>
+                    <p>1. <strong>Requirements Analysis:</strong> Collaborated with customer service teams to identify the most common query patterns and pain points<br>
+                    2. <strong>Data Collection & Preparation:</strong> Aggregated historical ticket data, FAQ documents, and service documentation<br>
+                    3. <strong>Model Architecture Design:</strong> Designed a multi-layered system combining intent recognition, entity extraction, and response generation<br>
+                    4. <strong>Integration Development:</strong> Built seamless connectors between the LLM system and ServiceNow API<br>
+                    5. <strong>Training & Fine-tuning:</strong> Implemented continuous learning mechanisms to improve response accuracy<br>
+                    6. <strong>Testing & Deployment:</strong> Conducted extensive testing phases including A/B testing with live customer interactions<br>
+                    7. <strong>Monitoring & Optimization:</strong> Established KPI tracking and continuous improvement workflows</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Tools and Technologies Used</h5>
+                    <p><strong>Core Technologies:</strong> Python, PyTorch, Hugging Face Transformers, LangChain<br>
+                    <strong>Integration Platforms:</strong> ServiceNow API, REST APIs, webhooks<br>
+                    <strong>Cloud Infrastructure:</strong> AWS (EC2, Lambda, S3), GCP Vertex AI<br>
+                    <strong>Data Processing:</strong> Pandas, NumPy, Scikit-learn<br>
+                    <strong>Monitoring & Analytics:</strong> Weights & Biases, CloudWatch, custom analytics dashboard</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Value Proposition</h5>
+                    <p>This project delivered immediate and measurable business value through a 32% reduction in monthly ticket volume, directly translating to $100,000 in annual cost savings. The solution improved customer satisfaction scores by providing 24/7 availability and instant responses to common queries, while freeing human agents to focus on complex, high-value customer interactions.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Unique Value</h5>
+                    <p>The system's innovative approach combines multiple AI techniques including context-aware conversation management, intelligent escalation logic, and continuous learning from customer interactions. Unlike traditional chatbots, this solution maintains conversation context across multiple sessions and learns from both successful resolutions and escalated cases to continuously improve its performance.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Relevance</h5>
+                    <p>This artifact demonstrates enterprise-scale AI implementation skills, showcasing ability to deliver tangible ROI through intelligent automation. It highlights expertise in production-ready AI systems, API integration, and collaborative development within large organizational structures—critical skills for senior ML engineering roles in enterprise environments.</p>
+                </div>
+            </div>
+
+            <!-- Artifact 2 -->
+            <div class="card artifact">
+                <h3>Artifact 2: Multilingual NLU Module for Smart Home Systems</h3>
+                
+                <div class="artifact-section">
+                    <h5>Introduction</h5>
+                    <p>A sophisticated Natural Language Understanding module designed to enable smart home devices to comprehend and respond to user commands across multiple languages, breaking down language barriers in home automation technology.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Description</h5>
+                    <p>Engineered a comprehensive multilingual NLU system that processes voice commands and text inputs in 8 different languages, translating user intents into actionable smart home device controls. The system handles complex linguistic variations, colloquialisms, and context-dependent commands while maintaining high accuracy across all supported languages. Features include real-time language detection, intent classification, entity extraction, and contextual understanding of smart home environments.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Objective</h5>
+                    <p>To create an inclusive smart home experience that serves diverse linguistic communities by providing native-language interaction capabilities, while maintaining consistent performance and reliability across all supported languages and dialects.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Process</h5>
+                    <p>1. <strong>Linguistic Research:</strong> Analyzed command patterns and cultural variations across target languages<br>
+                    2. <strong>Data Acquisition:</strong> Collected and curated multilingual training datasets from native speakers<br>
+                    3. <strong>Model Architecture:</strong> Designed transformer-based models with language-specific fine-tuning layers<br>
+                    4. <strong>Training Pipeline:</strong> Implemented cross-lingual transfer learning and multilingual model training<br>
+                    5. <strong>Integration Testing:</strong> Connected with popular smart home platforms and devices<br>
+                    6. <strong>Performance Optimization:</strong> Optimized for real-time processing and edge device deployment<br>
+                    7. <strong>Cultural Validation:</strong> Tested with native speakers to ensure cultural appropriateness and accuracy</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Tools and Technologies Used</h5>
+                    <p><strong>ML Frameworks:</strong> PyTorch, TensorFlow, Hugging Face Transformers<br>
+                    <strong>NLP Libraries:</strong> spaCy, NLTK, multilingual BERT, XLM-R<br>
+                    <strong>Speech Processing:</strong> OpenCV for audio preprocessing, custom ASR integration<br>
+                    <strong>Development:</strong> Python, Docker, Kubernetes for containerization<br>
+                    <strong>Testing & Analytics:</strong> Custom evaluation frameworks, multilingual benchmarking tools</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Value Proposition</h5>
+                    <p>This module significantly expands market reach for smart home manufacturers by making their products accessible to non-English speaking populations. It demonstrates capability to build inclusive technology solutions that serve diverse global markets while maintaining technical excellence and performance standards.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Unique Value</h5>
+                    <p>The system's advanced cultural context awareness sets it apart from typical multilingual systems. It understands not just language differences but cultural variations in how people interact with technology, making it more intuitive and natural for users from different cultural backgrounds.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Relevance</h5>
+                    <p>This project showcases expertise in advanced NLP techniques, cross-cultural technology design, and scalable system architecture. It demonstrates ability to tackle complex technical challenges while considering user experience and market expansion opportunities—valuable skills for global technology companies.</p>
+                </div>
+            </div>
+
+            <!-- Artifact 3 -->
+            <div class="card artifact">
+                <h3>Artifact 3: RAG-Based Plagiarism Detection System</h3>
+                
+                <div class="artifact-section">
+                    <h5>Introduction</h5>
+                    <p>An innovative plagiarism detection system that leverages Retrieval-Augmented Generation (RAG) technology to provide more accurate and contextually-aware academic integrity analysis compared to traditional keyword-matching approaches.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Description</h5>
+                    <p>Developed a sophisticated plagiarism detection engine that combines document retrieval with generative AI to identify both direct copying and sophisticated paraphrasing attempts. The system maintains a comprehensive knowledge base of academic sources and uses advanced semantic similarity algorithms to detect conceptual overlap, structural similarities, and idea appropriation beyond surface-level text matching.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Objective</h5>
+                    <p>To create a next-generation plagiarism detection tool that can identify subtle forms of academic dishonesty including sophisticated paraphrasing, structural copying, and idea appropriation that traditional tools often miss, while minimizing false positives and providing detailed similarity analysis.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Process</h5>
+                    <p>1. <strong>Knowledge Base Construction:</strong> Aggregated academic papers, journals, and educational content into searchable vector database<br>
+                    2. <strong>RAG Architecture Design:</strong> Built retrieval system with semantic search capabilities and generative analysis component<br>
+                    3. <strong>Semantic Analysis Engine:</strong> Implemented advanced NLP models for conceptual similarity detection<br>
+                    4. <strong>Document Processing Pipeline:</strong> Created preprocessing system for multiple document formats and languages<br>
+                    5. <strong>Scoring Algorithm Development:</strong> Designed nuanced scoring system that accounts for acceptable similarity vs. plagiarism<br>
+                    6. <strong>User Interface Creation:</strong> Built intuitive dashboard for educators with detailed similarity reports<br>
+                    7. <strong>Validation Testing:</strong> Conducted extensive testing with known plagiarism cases and false positive scenarios</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Tools and Technologies Used</h5>
+                    <p><strong>RAG Framework:</strong> LangChain, Vector databases (Pinecone, Chromadb)<br>
+                    <strong>NLP Models:</strong> Sentence Transformers, BERT variants, GPT integration<br>
+                    <strong>Backend:</strong> Python, FastAPI, PostgreSQL<br>
+                    <strong>Document Processing:</strong> PyPDF2, python-docx, OCR libraries<br>
+                    <strong>Frontend:</strong> React, D3.js for similarity visualization<br>
+                    <strong>Infrastructure:</strong> AWS S3, EC2, Elasticsearch for document indexing</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Value Proposition</h5>
+                    <p>This system addresses critical gaps in current plagiarism detection technology by providing more accurate identification of sophisticated academic dishonesty attempts. It offers educational institutions a powerful tool to maintain academic integrity while providing students with detailed feedback to improve their research and citation practices.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Unique Value</h5>
+                    <p>The integration of RAG technology with traditional plagiarism detection creates a hybrid approach that combines the comprehensiveness of large language models with the precision of targeted retrieval systems. This enables detection of conceptual plagiarism that purely text-based systems miss.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Relevance</h5>
+                    <p>This project demonstrates expertise in cutting-edge AI architectures (RAG), practical application of NLP in educational technology, and ability to solve complex real-world problems with innovative AI solutions. It shows capability to build systems that enhance educational integrity and quality.</p>
+                </div>
+            </div>
+
+            <!-- Artifact 4 -->
+            <div class="card artifact">
+                <h3>Artifact 4: Multilingual LLM Enhancement Framework</h3>
+                
+                <div class="artifact-section">
+                    <h5>Introduction</h5>
+                    <p>A comprehensive framework designed to enhance Large Language Models' performance across multiple languages through advanced fine-tuning techniques, cross-lingual transfer learning, and cultural context integration.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Description</h5>
+                    <p>Built an extensible framework that improves LLM performance in low-resource languages by implementing sophisticated transfer learning mechanisms, cultural context embeddings, and multilingual prompt engineering techniques. The system enables existing monolingual or English-centric models to perform effectively across diverse linguistic and cultural contexts while maintaining computational efficiency.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Objective</h5>
+                    <p>To democratize access to advanced AI capabilities across linguistic barriers by creating a reusable framework that can enhance any base LLM's multilingual performance without requiring complete retraining or massive computational resources.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Process</h5>
+                    <p>1. <strong>Framework Architecture:</strong> Designed modular system for plugging into various LLM architectures<br>
+                    2. <strong>Data Pipeline Creation:</strong> Built multilingual data collection and preprocessing pipelines<br>
+                    3. <strong>Transfer Learning Implementation:</strong> Developed efficient cross-lingual adaptation techniques<br>
+                    4. <strong>Cultural Context Integration:</strong> Created cultural knowledge bases and context-aware processing<br>
+                    5. <strong>Evaluation Methodology:</strong> Established comprehensive multilingual benchmarking system<br>
+                    6. <strong>Optimization Techniques:</strong> Implemented parameter-efficient fine-tuning methods<br>
+                    7. <strong>Documentation & Open Source:</strong> Created comprehensive documentation and API references</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Tools and Technologies Used</h5>
+                    <p><strong>Core Framework:</strong> PyTorch, Hugging Face Transformers, LoRA adapters<br>
+                    <strong>Multilingual Processing:</strong> Polyglot, FastText embeddings, multilingual tokenizers<br>
+                    <strong>Optimization:</strong> Parameter-efficient fine-tuning, gradient checkpointing<br>
+                    <strong>Evaluation:</strong> Custom benchmarking suite, BLEU/ROUGE metrics<br>
+                    <strong>Infrastructure:</strong> Distributed training setup, model versioning with DVC<br>
+                    <strong>Integration:</strong> REST APIs, Docker containerization, CI/CD pipelines</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Value Proposition</h5>
+                    <p>This framework enables organizations to quickly extend their AI capabilities to global markets without the prohibitive costs of training multilingual models from scratch. It democratizes advanced AI technology by making it accessible across linguistic barriers while maintaining performance standards.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Unique Value</h5>
+                    <p>The framework's innovative approach combines technical efficiency with cultural sensitivity, ensuring that enhanced models don't just translate language but truly understand cultural context and nuances. This creates more natural and appropriate AI interactions across different cultural contexts.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Relevance</h5>
+                    <p>This project demonstrates advanced understanding of transformer architectures, cross-lingual NLP, and scalable system design. It showcases ability to create reusable, impactful AI tools that can accelerate AI adoption globally—highly relevant for companies with international reach and diverse user bases.</p>
+                </div>
+            </div>
+
+            <!-- Artifact 5 -->
+            <div class="card artifact">
+                <h3>Artifact 5: Multilingual Question-Answering System</h3>
+                
+                <div class="artifact-section">
+                    <h5>Introduction</h5>
+                    <p>An advanced question-answering system capable of processing queries and providing accurate responses across multiple languages, designed to serve diverse global user bases with consistent quality and cultural appropriateness.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Description</h5>
+                    <p>Developed a comprehensive multilingual QA system that can understand questions in one language and provide answers from sources in different languages. The system incorporates advanced cross-lingual understanding, maintains context across language switches, and provides culturally appropriate responses while ensuring factual accuracy and relevance.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Objective</h5>
+                    <p>To create a globally accessible knowledge system that breaks down language barriers in information access, enabling users to ask questions in their native language while accessing the world's knowledge base regardless of source language.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Process</h5>
+                    <p>1. <strong>Multilingual Data Integration:</strong> Aggregated question-answer pairs from diverse linguistic sources<br>
+                    2. <strong>Cross-lingual Model Training:</strong> Implemented transformer models with multilingual capabilities<br>
+                    3. <strong>Answer Generation Pipeline:</strong> Built sophisticated answer synthesis and ranking system<br>
+                    4. <strong>Quality Assurance Framework:</strong> Created validation system for accuracy across languages<br>
+                    5. <strong>Cultural Adaptation Engine:</strong> Developed context-aware response modification system<br>
+                    6. <strong>Performance Optimization:</strong> Optimized for real-time query processing and response generation<br>
+                    7. <strong>User Interface Development:</strong> Created intuitive multilingual interface with language switching</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Tools and Technologies Used</h5>
+                    <p><strong>NLP Framework:</strong> Transformers, multilingual BERT, XLM-RoBERTa<br>
+                    <strong>Backend Architecture:</strong> Python, FastAPI, Redis for caching<br>
+                    <strong>Database Systems:</strong> Elasticsearch for multilingual search, PostgreSQL<br>
+                    <strong>Language Detection:</strong> polyglot, langdetect libraries<br>
+                    <strong>Translation Services:</strong> Google Translate API, custom translation models<br>
+                    <strong>Deployment:</strong> Docker, Kubernetes, AWS ECS</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Value Proposition</h5>
+                    <p>This system democratizes access to information by removing language barriers, enabling global knowledge sharing and making information accessible to non-English speakers. It provides significant value for international organizations, educational institutions, and global customer service operations.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Unique Value</h5>
+                    <p>The system's ability to maintain semantic coherence across languages while providing culturally appropriate responses sets it apart. It doesn't just translate but truly understands and adapts content for different cultural contexts, making information more accessible and relevant.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Relevance</h5>
+                    <p>This project demonstrates expertise in advanced NLP, cross-lingual AI systems, and global technology solutions. It showcases ability to build inclusive AI systems that serve diverse global populations—increasingly important as AI becomes more central to information access worldwide.</p>
+                </div>
+            </div>
+
+            <!-- Artifact 6: RoamIQ -->
+            <div class="card artifact">
+                <h3>Artifact 6: RoamIQ - AI-Powered Travel Planner</h3>
+                
+                <div class="artifact-section">
+                    <h5>Introduction</h5>
+                    <p>RoamIQ is an intelligent travel planning assistant developed using Design Thinking methodology to address the overwhelming complexity of travel planning for modern travelers. This project demonstrates practical application of AI technologies to solve real-world user experience challenges.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Description</h5>
+                    <p>RoamIQ generates personalized, day-by-day travel itineraries based on user inputs including destination, interests, budget, and travel style. The system employs advanced AI algorithms to understand user preferences, research destinations, and create comprehensive plans that optimize for both experience and budget constraints. The platform addresses key pain points including information overwhelm, lack of personalization, budget blind spots, and time consumption in traditional travel planning.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Objective</h5>
+                    <p>To create an AI-powered solution that transforms the travel planning experience from overwhelming and time-consuming to personalized and efficient, while ensuring budget alignment and traveler satisfaction through intelligent recommendation systems.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Process</h5>
+                    <p>1. <strong>Design Thinking Application:</strong> Used empathy mapping to understand target users (Independent Travelers, Busy Professionals, Budget-Conscious Explorers)<br>
+                    2. <strong>Problem Definition:</strong> Identified core pain points through user research and persona development<br>
+                    3. <strong>Ideation & Prototyping:</strong> Developed multiple solution concepts focusing on AI-driven personalization<br>
+                    4. <strong>LLM Integration:</strong> Implemented conversational AI interface for natural travel planning discussions<br>
+                    5. <strong>Constraint-Aware Algorithm:</strong> Built optimization engine balancing preferences with budget limitations<br>
+                    6. <strong>Testing & Iteration:</strong> Conducted user testing cycles to refine recommendation accuracy<br>
+                    7. <strong>Deployment:</strong> Launched as interactive chatbot with real-time planning capabilities</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Tools and Technologies Used</h5>
+                    <p><strong>AI Framework:</strong> Large Language Models, Natural Language Processing<br>
+                    <strong>Design Methodology:</strong> Design Thinking, User Persona Development, Empathy Mapping<br>
+                    <strong>Development Platform:</strong> Chatbot framework with conversational AI capabilities<br>
+                    <strong>Data Integration:</strong> Travel APIs, destination databases, pricing information<br>
+                    <strong>Optimization:</strong> Constraint satisfaction algorithms, preference learning systems<br>
+                    <strong>Interface:</strong> Conversational UI, interactive planning dashboard</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Value Proposition</h5>
+                    <p>RoamIQ transforms travel planning from a time-intensive research process into an interactive, personalized experience. Users save hours of planning time while receiving optimized itineraries that match their interests, travel style, and budget constraints, leading to more satisfying and cost-effective travel experiences.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Unique Value</h5>
+                    <p>Unlike generic travel platforms, RoamIQ learns individual user preferences and applies constraint-aware optimization to ensure recommendations are both personally relevant and financially feasible. The system's conversational approach makes travel planning feel natural and collaborative rather than transactional.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Relevance</h5>
+                    <p>This project demonstrates practical application of Design Thinking methodology combined with AI implementation skills. It showcases ability to identify real user problems, apply human-centered design principles, and build AI solutions that provide tangible value—critical skills for product development and user experience roles in AI companies.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>References</h5>
+                    <p><a href="https://www.chatbase.co/AbfCQ0gTm1YP5SOKRX1kU/help" target="_blank" rel="noopener noreferrer" class="external-link">Live RoamIQ Assistant - Interactive Demo</a></p>
+                </div>
+            </div>
+
+            <!-- Artifact 7: AI Revolution Research Presentation -->
+            <div class="card artifact">
+                <h3>Artifact 7: AI Revolution - Comprehensive History & Impact Analysis</h3>
+                
+                <div class="artifact-section">
+                    <h5>Introduction</h5>
+                    <p>A comprehensive research presentation exploring the complete timeline of Artificial Intelligence from its foundational beginnings in the 1940s through modern breakthroughs, examining the technological evolution, societal impacts, and future trajectory of AI development.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Description</h5>
+                    <p>This collaborative research project traces the entire history of AI, documenting key milestones from early foundations (McCulloch & Pitts artificial neuron model, Alan Turing's test) through symbolic AI, expert systems, machine learning revolutions, deep learning breakthroughs, and contemporary generative AI advances. The presentation analyzes AI winters, technological booms, and the exponential growth leading to modern transformer architectures and large language models. It provides critical context for understanding current AI capabilities and limitations within historical perspective.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Objective</h5>
+                    <p>To provide a comprehensive educational resource that contextualizes modern AI achievements within their historical development, enabling better understanding of AI's trajectory, recurring patterns in technological advancement, and informed predictions about future directions in artificial intelligence research and applications.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Process</h5>
+                    <p>1. <strong>Historical Research:</strong> Conducted extensive literature review covering 80+ years of AI development<br>
+                    2. <strong>Timeline Construction:</strong> Organized discoveries into coherent chronological narrative across major eras<br>
+                    3. <strong>Collaborative Analysis:</strong> Team-based examination of technological breakthroughs and their implications<br>
+                    4. <strong>Impact Assessment:</strong> Evaluated societal, economic, and technological impacts of key AI milestones<br>
+                    5. <strong>Visual Design:</strong> Created compelling visual narrative to communicate complex technical evolution<br>
+                    6. <strong>Presentation Development:</strong> Structured content for educational delivery and knowledge transfer<br>
+                    7. <strong>Critical Analysis:</strong> Examined patterns in AI development cycles, funding trends, and breakthrough catalysts</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Tools and Technologies Used</h5>
+                    <p><strong>Research Tools:</strong> Academic databases, historical AI literature, technical papers<br>
+                    <strong>Presentation Software:</strong> Advanced presentation design tools, visual timeline creation<br>
+                    <strong>Collaboration Platforms:</strong> Team coordination tools, shared research repositories<br>
+                    <strong>Analysis Frameworks:</strong> Technology adoption curves, impact assessment methodologies<br>
+                    <strong>Documentation:</strong> Citation management, reference organization systems<br>
+                    <strong>Visual Design:</strong> Infographic creation, data visualization tools</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Value Proposition</h5>
+                    <p>This presentation provides critical historical context that enables more informed decision-making about AI adoption, investment, and development strategies. Understanding AI's cyclical history of winters and booms helps organizations avoid past pitfalls while capitalizing on genuine breakthrough opportunities. The comprehensive timeline serves as an educational resource for teams, stakeholders, and leadership navigating AI transformation.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Unique Value</h5>
+                    <p>The presentation synthesizes decades of AI research into an accessible narrative that connects technical breakthroughs with their broader implications. It provides unique insights into recurring patterns in AI development, helping audiences distinguish between hype cycles and genuine technological advancement—crucial for strategic planning in AI-dependent organizations.</p>
+                </div>
+
+                <div class="artifact-section">
+                    <h5>Relevance</h5>
+                    <p>This artifact demonstrates research capabilities, ability to synthesize complex technical information for diverse audiences, and understanding of AI's broader context beyond individual algorithms. These skills are essential for technical leadership roles requiring communication with non-technical stakeholders, strategic planning, and educating teams about AI capabilities and limitations within realistic historical context.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="card skill-category">
+                    <h4>Programming Languages</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="card skill-category">
+                    <h4>AI & Machine Learning</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">Keras</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">Hugging Face</span>
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">OpenCV</span>
+                    </div>
+                </div>
+
+                <div class="card skill-category">
+                    <h4>Cloud & Infrastructure</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">GCP</span>
+                        <span class="skill-tag">Vertex AI</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                    </div>
+                </div>
+
+                <div class="card skill-category">
+                    <h4>Data Science & Analytics</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Seaborn</span>
+                        <span class="skill-tag">Weights & Biases</span>
+                        <span class="skill-tag">Jupyter</span>
+                    </div>
+                </div>
+
+                <div class="card skill-category">
+                    <h4>Specialized AI Areas</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Natural Language Processing</span>
+                        <span class="skill-tag">Computer Vision</span>
+                        <span class="skill-tag">Deep Learning</span>
+                        <span class="skill-tag">Large Language Models</span>
+                        <span class="skill-tag">Multi-Agent Systems</span>
+                        <span class="skill-tag">Speech Processing</span>
+                    </div>
+                </div>
+
+                <div class="card skill-category">
+                    <h4>Development & DevOps</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">Microservices</span>
+                        <span class="skill-tag">Agile</span>
+                        <span class="skill-tag">Version Control</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript for smooth scrolling -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add active state to navigation links
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('.section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Add loading animation for cards
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
